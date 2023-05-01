@@ -4,7 +4,7 @@ const TaskForm = () => {
   return (
     <form>
         <input type='text' placeholder='Task title...'></input>
-        <input type='text' placeholder='Task discription...'></input>
+        <input type='text' placeholder='Task description...'></input>
         <button>Add task</button>
     </form>
   )

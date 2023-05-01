@@ -1,0 +1,11 @@
+.TaskList {
+    display: flex;
+    justify-content: center;
+    background-color: lightgreen;
+}
+
+.Button {
+    align-self: center;
+    background-color: red;
+    color: white;
+}

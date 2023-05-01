@@ -1,12 +1,15 @@
 import React from 'react'
+import './UI/TaskList.css'
 
 const TaskList = () => {
   return (
-    <div>
-        <h1>Task title</h1>
-        <p>Task discription</p>
+    <div className='TaskList'>
+        <div>
+            <h1>Task title...</h1>
+            <p>Task description...</p>
+        </div>
         <input type='checkbox'></input>
-        <button>Delete</button>
+        <button className='Button'>Delete</button>
     </div>
   )
 }
