@@ -1,7 +1,12 @@
 import React from 'react'
 import './UI/TaskList.css'
 
-const TaskItem = ({task}) => {
+const TaskItem = ({task, deleteTask}) => {
+
+    const handleDelete = () => {
+        const id = task.id
+        deleteTask(id)
+    }
   return (
     <div className='TaskList'>
         <div>
@@ -9,7 +14,7 @@ const TaskItem = ({task}) => {
             <p>{task.body}</p>
         </div>
         <input type='checkbox'></input>
-        <button className='Button'>Delete</button>
+        <button onClick={handleDelete} className='Button'>Delete</button>
     </div>
   )
 }
