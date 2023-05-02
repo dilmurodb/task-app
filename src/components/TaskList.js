@@ -1,15 +1,10 @@
 import React from 'react'
-import './UI/TaskList.css'
+import TaskItem from './TaskItem'
 
-const TaskList = () => {
+const TaskList = ({tasks}) => {
   return (
-    <div className='TaskList'>
-        <div>
-            <h1>Task title...</h1>
-            <p>Task description...</p>
-        </div>
-        <input type='checkbox'></input>
-        <button className='Button'>Delete</button>
+    <div>
+        {tasks.map(task => <TaskItem key={task.id} task={task} />)}
     </div>
   )
 }

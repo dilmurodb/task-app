@@ -6,7 +6,7 @@ const TaskForm = ({addTask}) => {
 
     const addNewTask = (e) => {
         e.preventDefault()
-        const newTask = {title: taskTitle, body: taskBody}
+        const newTask = {title: taskTitle, body: taskBody, id: Date.now()}
         addTask(newTask)
         setTaskTitle('')
         setTaskBody('')
