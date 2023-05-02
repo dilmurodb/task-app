@@ -1,0 +1,19 @@
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70VW;
+    border: 2px solid green;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.taskBody {
+    width: 70vb;
+}
+
+.taskBtn {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+}

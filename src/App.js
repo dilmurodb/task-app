@@ -11,7 +11,6 @@ function App() {
   
   const addTask = (newTask) => {
     setTasks([...tasks, newTask])
-    console.log(tasks)
   }
 
   const deleteTask = (id) => {
@@ -19,8 +18,7 @@ function App() {
   }
 
   const sortTasks = (sort) => {
-    setSortedTasks(sort)
-    console.log(sortedTasks)
+    setTasks([...tasks].sort((a, b) => a[sort].localeCompare(b[sort])))
   }
 
   return (
@@ -32,7 +30,8 @@ function App() {
         defaultValue='--Please choose how to sort--'
         options={[{value: 'title', name: 'Sort by title'}, {value: 'body', name: 'Sort by description'}]}
         value={sortedTasks}
-        onChange={sortTasks} />
+        onChange={sortTasks} 
+      />
       {tasks.length === 0
         ? 
         <h1>There is no tasks...</h1> 
