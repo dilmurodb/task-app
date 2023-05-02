@@ -7,7 +7,8 @@ import SortTaskList from './components/SortTaskList'
 function App() {
 
   const [tasks, setTasks] = useState([{title: 'Task title...', body: 'Task description...', id: 7281015}])
-
+  const [sortedTasks, setSortedTasks] = useState('')
+  
   const addTask = (newTask) => {
     setTasks([...tasks, newTask])
     console.log(tasks)
@@ -17,12 +18,21 @@ function App() {
     setTasks(tasks.filter(task => task.id !== id))
   }
 
+  const sortTasks = (sort) => {
+    setSortedTasks(sort)
+    console.log(sortedTasks)
+  }
+
   return (
     <div className="App">
       <h1>task-app</h1>
       <TaskForm addTask={addTask} />
       <hr style={{margin: '20px'}}/>
-      <SortTaskList />
+      <SortTaskList 
+        defaultValue='--Please choose how to sort--'
+        options={[{value: 'title', name: 'Sort by title'}, {value: 'body', name: 'Sort by description'}]}
+        value={sortedTasks}
+        onChange={sortTasks} />
       {tasks.length === 0
         ? 
         <h1>There is no tasks...</h1> 

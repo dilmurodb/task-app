@@ -1,11 +1,12 @@
 import React from 'react'
 
-const SortTaskList = () => {
+const SortTaskList = ({options, defaultValue, value, onChange}) => {
   return (
-    <select>
-        <option value=''>Please choose sort option</option>
-        <option>Sort by title</option>
-        <option>Sort by description</option>
+    <select 
+        value={value}
+        onChange={e => onChange(e.target.value)}>
+        <option value=''>{defaultValue}</option>
+        {options.map(option => <option key={option.value} value={option.value}>{option.name}</option>)}
     </select>
   )
 }
